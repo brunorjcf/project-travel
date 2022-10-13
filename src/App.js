@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from './Components/Navbar/Navbar'
+import Footer from './Components/Footer/Footer'
+import Home from './Components/Home/Home'
+import Main from './Components/Main/Main'
+import React from 'react'
+import './app.css'
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code>  save to reload Cafe.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React Whith Café
-        </a>
-      </header>
-    </div>
-  );
+    <>
+    <Navbar/>
+    <Home/>
+    <Main/>
+    <Footer/>
+    </>
+  )
 }
 
-export default App;
+export default App
