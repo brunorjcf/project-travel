@@ -2,13 +2,23 @@ import {MdOutlineTravelExplore} from 'react-icons/md'
 import {AiOutlineTwitter} from 'react-icons/ai'
 import {AiFillYoutube} from 'react-icons/ai'
 import {AiFillInstagram}  from 'react-icons/ai'
+import {FiChevronRight} from 'react-icons/fi'
 import {FaTripadvisor} from 'react-icons/fa'
 import video2 from '../../Assets/video(2).mp4'
 import {FiSend} from 'react-icons/fi'
-import React from 'react'
+import React,{useEffect} from 'react'
 import './footer.css'
 
+// Imiport of scrolls
+import Aos from 'aos'
+import 'aos/dist/aos.css'
+
 const Footer = () => {
+  // lets create a react hook to add a scroll animation...
+  useEffect(()=>{
+    Aos.init({duration: 2000})
+  }, [])
+
   return (
     <section className="footer"> 
       <div className="videoDiv">
@@ -17,14 +27,14 @@ const Footer = () => {
 
       <div className="secContent container">
         <div className="contactDiv flex">
-          <div className="text">
-            <small>CONTACTE-NOS</small>
+          <div data-aos="fade-up" className="text">
+            <small>CONTACT-NOS</small>
             <h2>Viaje com a gente!</h2>
           </div>
 
           <div className="inputDiv flex">
-            <input type="text" placeholder='Seu melhor E-mail' />
-            <buttom className="btn flex" type="submit">
+            <input data-aos="fade-up" type="text" placeholder='Seu melhor E-mail' />
+            <buttom data-aos="fade-up" className="btn flex" type="submit">
               ENVIAR <FiSend className="icons" />
             </buttom>
           </div>
@@ -38,7 +48,7 @@ const Footer = () => {
               </a>
             </div>
 
-            <div className="footerParagraph">
+            <div data-aos="fade-up" className="footerParagraph">
               Lorem ipsum dolor sit amet, consectetur
               adipisicing elit. ullan inventore eos fuga
               hic cum voluptatem minima, tempore
@@ -47,13 +57,107 @@ const Footer = () => {
               atque soluta?
             </div>
 
-            <div className="footerSocials">
-              <AiOutlineTwitter className="icons"/>
-              <AiFillYoutube className="icons"/>
-              <AiFillInstagram className="icons"/>
-              <FaTripadvisor className="icons"/>
+            <div data-aos="fade-up" className="footerSocials flex">
+              <AiOutlineTwitter className="icon"/>
+              <AiFillYoutube className="icon"/>
+              <AiFillInstagram className="icon"/>
+              <FaTripadvisor className="icon"/>
             </div>
           </div>
+
+          <div className="footerLinks grid">
+
+            {/* Group One */}
+            <div data-aos="fade-up" data-aos-duration="3000"  className="linkGroup">
+              <span className="groupTitle">
+                Nossa Agência
+              </span>
+
+              <li className="footerList flex">
+                <FiChevronRight className="icon"/>
+                Serviços
+              </li>
+              <li className="footerList flex">
+                <FiChevronRight className="icon"/>
+                Insurance
+              </li>
+              <li className="footerList flex">
+                <FiChevronRight className="icon"/>
+                Agency
+              </li>
+              <li className="footerList flex">
+                <FiChevronRight className="icon"/>
+                Tourism
+              </li>
+              <li className="footerList flex">
+                <FiChevronRight className="icon"/>
+                Payment
+              </li>
+            </div>
+
+            {/* Group Two */}
+            <div data-aos="fade-up" data-aos-duration="4000" className="linkGroup">
+              <span className="groupTitle">
+                PARTNERS
+              </span>
+
+              <li className="footerList flex">
+                <FiChevronRight className="icon"/>
+                Bookings
+              </li>
+              <li className="footerList flex">
+                <FiChevronRight className="icon"/>
+                Rentcars
+              </li>
+              <li className="footerList flex">
+                <FiChevronRight className="icon"/>
+                HostelWorld
+              </li>
+              <li className="footerList flex">
+                <FiChevronRight className="icon"/>
+                Trivago
+              </li>
+              <li className="footerList flex">
+                <FiChevronRight className="icon"/>
+                Tripadvisor
+              </li>
+            </div>
+
+            {/* Group Three */}
+            <div data-aos="fade-up" data-aos-duration="5000"  className="linkGroup">
+              <span className="groupTitle">
+                LAST MINUTE
+              </span>
+
+              <li className="footerList flex">
+                <FiChevronRight className="icon"/>
+                London
+              </li>
+              <li className="footerList flex">
+                <FiChevronRight className="icon"/>
+                California
+              </li>
+              <li className="footerList flex">
+                <FiChevronRight className="icon"/>
+                Indonesia
+              </li>
+              <li className="footerList flex">
+                <FiChevronRight className="icon"/>
+                Europe
+              </li>
+              <li className="footerList flex">
+                <FiChevronRight className="icon"/>
+                Oceania
+              </li>
+            </div>
+
+          </div>
+
+          <div className="footerDiv flex">
+            <small>BEST TRAVEL WEBSITE THEME</small>
+            <small>COPYRIGHTS RESERVED - BR.SANTOS 2022</small>
+          </div>
+
         </div>
       </div>
 

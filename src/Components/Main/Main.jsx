@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import './main.css'
 
 // Let me import the imafes so we dont have this error on the browser.
@@ -16,6 +16,10 @@ import img9 from '../../Assets/img(9).jpg'
 // import icons
 import { HiOutlineLocationMarker } from 'react-icons/hi'
 import { HiOutlineClipboardCheck } from 'react-icons/hi'
+
+// Imiport of scrolls
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 
 const Data = [ 
   {
@@ -109,12 +113,18 @@ const Data = [
   },          
 ]
 
-const Main = () => {  
+const Main = () => {
+  // lets create a react hook to add a scroll animation...
+  useEffect(()=>{
+    Aos.init({duration: 2000})
+  }, [])
+
+  
   return (
     <section className="main container section">
       
       <div className="secTitle">
-        <h3 className="title"> 
+        <h3 data-aos="fade-right"  className="title"> 
           Destinos Mais Visitados
         </h3>
       </div>
@@ -123,7 +133,7 @@ const Main = () => {
         {
           Data.map(({id, imgSrc, destTitle, location, grade, fees, description }) =>{
               return(
-                <div key={id} className="singleDestination">
+                <div key={id} data-aos="fade-up" className="singleDestination">
                   {/* Here it will return single id from the map array */}
 
                   <div className="imageDiv">

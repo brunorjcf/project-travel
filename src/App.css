@@ -22,6 +22,10 @@
   --cardBG: rgb(225, 225, 235);
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 a{
   text-decoration: none;
 }
@@ -88,3 +92,21 @@ body{
 /* Gente este é um default styling que será aplicados
 para as sections, por favor seja paciente, você precisar ver como deu trabalho 
 . Siga-me. Obrigado!*/
+
+/*===== MEDIA QUERIES =====*/
+@media screen and (min-width: 1240px){
+  .container{
+    width: 80% !important;
+    margin: auto !important;
+  }
+
+  .section{
+    padding: 6rem 0 4rem;
+  }
+}
+
+@media screen and (min-width: 2560px){
+  body{
+    zoom: 1.7;
+  }
+}
